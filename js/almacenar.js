@@ -18,10 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
         let item = document.getElementById('item').value;
         arr.push(item);
         localStorage.setItem("datos", arr);
-            for (let i = 0; i < arr.length; i++)
+        arr.forEach((element) => {
+            
             il.innerHTML = `
-                ${arr[i]} 
-            `;
-            lista.appendChild(il);
-    })
-})
+            ${arr[i]} 
+        `;
+        lista.appendChild(il);
+
+    });
+    });
+});
