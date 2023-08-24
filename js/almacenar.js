@@ -1,3 +1,4 @@
+// boton limpiar
 document.addEventListener("DOMContentLoaded", function() {
     let limpiar = document.getElementById('limpiar');
     let lista = document.getElementById('contenedor')
@@ -7,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 })
 
+// boton agregar a la lista
 document.addEventListener("DOMContentLoaded", function() {
     let agregar = document.getElementById('agregar');
     let arr = [];
