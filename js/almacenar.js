@@ -1,25 +1,28 @@
+let arr = [];
 document.addEventListener("DOMContentLoaded", function() {
     let limpiar = document.getElementById('limpiar');
     let lista = document.getElementById('contenedor')
     limpiar.addEventListener('click', function() {
         localStorage.clear();
         lista.innerHTML = ``
+        arr = [];
     })
 })
 
 document.addEventListener("DOMContentLoaded", function() {
     let agregar = document.getElementById('agregar');
-    let arr = [];
-    let il = document.createElement('il');
-    let lista = document.getElementById('contenedor');
+    const lista = document.getElementById('contenedor');
     agregar.addEventListener('click', function() {
+        lista.innerHTML = ``
         let item = document.getElementById('item').value;
         arr.push(item);
         localStorage.setItem("datos", arr);
-            for (let i = 0; i < arr.length; i++)
+        arr.forEach(item =>  {
+            const il = document.createElement('il');
             il.innerHTML = `
-                ${arr[i]} 
-            `;
+                ${item} 
+                `;
             lista.appendChild(il);
+            })
     })
 })
