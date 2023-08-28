@@ -10,19 +10,28 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 document.addEventListener("DOMContentLoaded", function() {
+
     let agregar = document.getElementById('agregar');
     const lista = document.getElementById('contenedor');
-    agregar.addEventListener('click', function() {
-        lista.innerHTML = ``
-        let item = document.getElementById('item').value;
-        arr.push(item);
-        localStorage.setItem("datos", arr);
-        arr.forEach(item =>  {
-            const il = document.createElement('il');
-            il.innerHTML = `
-                ${item} 
-                `;
-            lista.appendChild(il);
-            })
-    })
+    
+        agregar.addEventListener('click', function addkey() {
+            lista.innerHTML = ``
+            let item = document.getElementById('item').value;
+            arr.push(item);
+            localStorage.setItem("datos", arr);
+            arr.forEach(item =>  {
+                const il = document.createElement('il');
+                il.innerHTML = `
+                    ${item} 
+                    `;
+                lista.appendChild(il);
+                })
+        })
+
+        agregar.addEventListener("keydown", function(event){
+            if(event.key("Enter")) {
+                 return addkey()
+            }
+        })
+        
 })
